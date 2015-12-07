@@ -8,3 +8,6 @@ show HEAD      - shows most recently made commit
 checkout HEAD fileName  - discards changes in working dir
 reset HEAD fileName - resets file in staging area to be same as HEAD commit
 checkout SHA   - rolls back changes to the commit with the given SHA
+
+
+ewarjwoiejroaiwenroiaweroaiweroaiwehroiwaejroiwaejroiweajr
