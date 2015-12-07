@@ -1,0 +1,9 @@
+init
+status
+add
+diff
+commit
+log
+show
+checkout
+reset
