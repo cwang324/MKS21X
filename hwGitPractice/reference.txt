@@ -1,9 +1,9 @@
-init
-status
-add
-diff
-commit
-log
-show
-checkout
-reset
+init           - initializes local directory
+status         - checks status of changes
+add fileName   - adds file to staging area
+diff fileName  - checks differences b/w file in working directory and staging area
+commit         - -m to add comment in quotations
+log            - list of all previous commits
+show HEAD      - shows most recently made commit
+checkout HEAD fileName  - discards changes in working dir
+reset HEAD fileName - resets file in staging area to be same as HEAD commit
