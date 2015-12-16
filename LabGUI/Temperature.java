@@ -1,0 +1,19 @@
+public class Temperature{
+
+    public static double FtoC(double ftemp){
+	double ctemp = (ftemp-32)*(5/9.0);
+	return ctemp;
+    }
+
+    public static double CtoF(double ctemp){
+	double ftemp = ctemp * 9/5.0 + 32;
+	return ftemp;
+    }
+
+   public static void main (String[]args){
+       System.out.println(CtoF(20));
+       System.out.println(FtoC(68));
+   }
+
+}
+
