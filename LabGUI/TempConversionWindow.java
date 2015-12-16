@@ -18,6 +18,16 @@ public class TempConversionWindow extends JFrame{
     pane = this.getContentPane();
     pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
+    JButton b1 = new JButton("to F");
+    JButton b2 = new JButton("to C");
+
+    t = new JTextField(10);
+    j = new JLabel("The converted temperature is...");
+
+    pane.add(t);
+    pane.add(b1);
+    pane.add(b2);
+    pane.add(j);
     }
 
 
