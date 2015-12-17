@@ -15,23 +15,52 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);			      
     
     
-    pane = this.getContentPane();
-    pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+	pane = this.getContentPane();
+	pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
-    JButton b1 = new JButton("to F");
-    JButton b2 = new JButton("to C");
+	JButton b1 = new JButton("to F");
+	b1.addActionListener(this);
+	b1.setActionCommand("to F");
+	JButton b2 = new JButton("to C");
+	b2.addActionListener(this);
+	b2.setActionCommand("to C");
 
-    t = new JTextField(10);
-    j = new JLabel("The converted temperature is...");
+	t = new JTextField(10);
+	j = new JLabel("The converted temperature is...");
 
-    pane.add(t);
-    pane.add(b1);
-    pane.add(b2);
-    pane.add(j);
+	pane.add(t);
+	pane.add(b1);
+	pane.add(b2);
+	pane.add(j);
     }
 
     public void actionPerformed(ActionEvent e){
 	String event = e.getActionCommand();
+	String s = t.getText();
+        double temp = (double)Integer.parseInt(s);
+
+	if (event.equals("to F")){
+	    temp=CtoF(temp);
+	}
+	if (event.equals("to C")){
+	    temp=FtoC(temp);
+	}
+	s = Double.toString(temp);
+	j.setText("The converted temperature is..." + s);
+    }
+	    
+	    
+		
+	    
+	    
+
+    public static double FtoC(double ftemp){
+	double ctemp = (ftemp-32)*(5/9.0);
+	return ctemp;
     }
 
+    public static double CtoF(double ctemp){
+	double ftemp = ctemp * 9/5.0 + 32;
+	return ftemp;
+    }
 }

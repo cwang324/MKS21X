@@ -1,11 +1,11 @@
 public class Temperature{
 
-    public static double FtoC(double ftemp){
+    public static double FtoC(int ftemp){
 	double ctemp = (ftemp-32)*(5/9.0);
 	return ctemp;
     }
 
-    public static double CtoF(double ctemp){
+    public static double CtoF(int ctemp){
 	double ftemp = ctemp * 9/5.0 + 32;
 	return ftemp;
     }
