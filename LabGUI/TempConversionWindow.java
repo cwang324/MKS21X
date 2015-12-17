@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;//NEW STUFF!
 import java.awt.event.*;
 
-public class TempConversionWindow extends JFrame{
+public class TempConversionWindow extends JFrame implements ActionListener{
 
     private Container pane;
     private JLabel j;
@@ -30,5 +30,8 @@ public class TempConversionWindow extends JFrame{
     pane.add(j);
     }
 
+    public void actionPerformed(ActionEvent e){
+	String event = e.getActionCommand();
+    }
 
 }
