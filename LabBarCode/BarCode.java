@@ -1,5 +1,5 @@
 
-public class BarCode {
+public class BarCode implements Comparable {
     // instance variables
     private String _zip;
     private int _checkDigit;
@@ -55,15 +55,29 @@ public class BarCode {
 
     
     public boolean equals(Object other){
-        return _checkDigit==other._checkDigit &&_zip.equals(other._zip);
+	BarCode b = (BarCode) other;
+        return _checkDigit==b._checkDigit &&_zip.equals(b._zip);
     }
     
     // postcondition: false if the object is not a BarCode, 
     // false if it is a non-matching barcode
     // true when they match.
 
-    /*
-    public int compareTo(Comparable other){}
+  
+    public int compareTo(Object other){
+	if (other instanceof BarCode ){
+	    BarCode b = (BarCode)other;
+	    int stringCmpResult =  this._zip.compareTo(b._zip);
+	    if ( stringCmpResult != 0 ){
+		return stringCmpResult;
+	    }else{
+		return (this._checkDigit - b._checkDigit);
+	    } 	
+	}
+	else{
+	    throw new RuntimeException("Cannot comppare incompatible objects");
+	}	
+    }
     // postcondition: compares the zip + checkdigit 
-    *//
+ 
 }
