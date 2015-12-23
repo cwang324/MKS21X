@@ -53,14 +53,17 @@ public class BarCode {
 	return retString;
     }
 
-    /*
-    public boolean equals(Object other){}
+    
+    public boolean equals(Object other){
+        return _checkDigit==other._checkDigit &&_zip.equals(other._zip);
+    }
+    
     // postcondition: false if the object is not a BarCode, 
     // false if it is a non-matching barcode
     // true when they match.
 
-
+    /*
     public int compareTo(Comparable other){}
     // postcondition: compares the zip + checkdigit 
-    */
+    *//
 }
