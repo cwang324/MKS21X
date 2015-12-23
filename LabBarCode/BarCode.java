@@ -1,7 +1,11 @@
+
 public class BarCode {
     // instance variables
     private String _zip;
     private int _checkDigit;
+    private static final String[] ref = {"||:::",":::||","::|:|","::||:",":|::|",
+					 ":|:|:",":||::","|:::|","|::|:","|:|::"};
+    
 
     // constructors
     //precondtion: zip.length() = 5 and zip contains only digits.
@@ -33,12 +37,23 @@ public class BarCode {
 	return sum;
     }
     
-    /*
+    
     //postcondition: format zip + check digit + barcode 
     //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"      
-    public String toString(){}
 
+    public String toString(){
+	String retString = _zip + _checkDigit + " |";
+	int i = 0;
+	while (i<5){
+	    retString += ref[(int)_zip.charAt(i)];
+	    i++;
+	}
+	retString+=ref[_checkDigit] + "|";
+			     
+	return retString;
+    }
 
+    /*
     public boolean equals(Object other){}
     // postcondition: false if the object is not a BarCode, 
     // false if it is a non-matching barcode
