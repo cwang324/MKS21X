@@ -26,6 +26,33 @@ public class Sorts{
 	    }	
 	}
 
-    }    
+    }
+
+    public static void selection(int[] data){
+	int minI;
+	int minVal;
+	for (int i=0; i < data.length; i++){
+	    minI = findMin(data,i)
+		minVal = data[minI];
+	    data[minI] = data[i];
+	    data[i] = minVal;
+	}
+
+    }
+
+    private static int findMin(int[] data, int startI){
+	int min = 0;
+	int minI = 0;
+	for (int i = startI; i<data.length; i++){
+	    if (data[i] < min){
+		min = data[i];
+		minI = i;
+	    }
+	}
+	return minI;		   
+    }
+
 }
+
+
     
